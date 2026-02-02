@@ -2,7 +2,8 @@
   "name": "illiababak/vinyl-music-player-backend",
   "autoload": {
     "psr-4": {
-      "Illiababak\\VinylMusicPlayerBackend\\": "src/"
+      "App\\": "app/",
+      "Core\\": "core/"
     }
   },
   "authors": [
@@ -14,5 +15,8 @@
   "scripts": {
     "start": "php -S localhost:8000 -t public"
   },
-  "require": {}
+  "require": {
+    "mongodb/mongodb": "^2.1",
+    "vlucas/phpdotenv": "^5.6"
+  }
 }

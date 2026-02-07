@@ -17,7 +17,7 @@ use Core\Mongo;
 use App\Controllers\TracksController;
 
 $dotenv = Dotenv::createImmutable(__DIR__ . "/../");
-$dotenv->safeLoad(); 
+$dotenv->safeLoad();
 
 Mongo::connect();
 
@@ -28,6 +28,5 @@ $router->get('/tracks', TracksController::class . '@getAllTracks');
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['_method'])) {
     $_SERVER['REQUEST_METHOD'] = strtoupper($_POST['_method']);
 }
-
 
 $router->dispatch($_SERVER['REQUEST_METHOD'], $_SERVER['REQUEST_URI']);

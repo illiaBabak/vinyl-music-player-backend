@@ -19,6 +19,6 @@ final class SupabaseSignedUrl
         $body = (string) $result->getBody();
         $data = json_decode($body, true);
 
-        return ($_ENV["SUPABASE_URL"] ?? getenv('SUPABASE_URL')) . $data["signedURL"];
+        return ($_ENV["SUPABASE_URL"] ?? getenv('SUPABASE_URL')) . '/storage/v1' . $data["signedURL"];
     }
 }

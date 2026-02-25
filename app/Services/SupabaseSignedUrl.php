@@ -15,7 +15,7 @@ final class SupabaseSignedUrl
 
     //     $result = $file->createSignedUrl($path, 3600);
 
-    //     /** @var ResponseInterface $result */
+    // /** @var ResponseInterface $result */
     //     $body = (string) $result->getBody();
     //     $data = json_decode($body, true);
 
@@ -46,7 +46,7 @@ final class SupabaseSignedUrl
 
         $response = curl_exec($ch);
 
-        if ($response === false) {
+        if (!$response) {
             throw new \RuntimeException('cURL error: ' . curl_error($ch));
         }
 
